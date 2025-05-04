@@ -69,6 +69,12 @@ void PlayerTether::tick(StageScene* scene, PlayerActorHakoniwa* p1)
         }
     }
 
+    // Teammate killing
+    if (mClosePup && mClosePup->isConnected && mClosePup->isInSameStage && !mIsTargetPupAlive && mSceneFrames > 300) {
+        if (!GameDataFunction::isPlayerLifeZero(p1))
+            killMainPlayer(p1);
+    }
+
     // Player warping
     // if (mClosePup && !mClosePup->isInSameStage && mSceneFrames > 150 && mIsTargetPupAlive) {
     //     mIsSceneChangeFromPuppet = true;

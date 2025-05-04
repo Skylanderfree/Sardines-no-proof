@@ -160,6 +160,8 @@ public:
 
     static bool isMissEndPrevStageForSceneDead(GameDataHolderAccessor);
 
+    static bool isPlayerLifeZero(GameDataHolderAccessor);
+
 };
 
 namespace CustomGameDataFunction {
